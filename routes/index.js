@@ -44,6 +44,8 @@ router.post('/add', function(req, res, next){
   res.redirect('/');
 })
 
+// form-update
+
 router.get('/form-update/:id', function(req, res, next){
   Student.findById(req.params.id, (err, data) => {
     res.render('form-update', {student: data});
@@ -56,6 +58,7 @@ router.post('/update', function(req, res, next){
   })
 })
 
+// delete
 router.get('/form-delete/:id', function(req, res, next){
   Student.findByIdAndDelete(req.params.id, (err, data) => {
     res.redirect('/')
